@@ -1,6 +1,6 @@
 
 import './App.css';
-import Item from './components/items/item.component'
+import Item from './components/item-list/item-list.component'
 
 function App() {
   return (
