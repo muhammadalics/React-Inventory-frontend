@@ -1,12 +1,19 @@
 
 import './App.css';
-import Item from './components/item-list/item-list.component'
+import ItemList from './components/item-list/item-list.component'
+import addItem from './pages/add-item/add-item.component'
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Item/>
       
+
+      <Switch>
+        <Route exact path='/additem' component={addItem} />
+        <Route exact path='/' component={ItemList} />
+      </Switch>
+
     </div>
   );
 }

@@ -34,6 +34,7 @@ class ItemList extends React.Component {
         return (
 
             <div>
+                <h1>Inventory Management</h1>
                 {this.state.loading || !this.state.items ? (
                     <div> loading...</div>
                 ) : (
