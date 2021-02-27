@@ -2,7 +2,7 @@
 import './App.css';
 import ItemList from './components/item-list/item-list.component'
 import addItem from './pages/add-item/add-item.component'
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route,  } from 'react-router-dom';
 
 function App() {
   return (
