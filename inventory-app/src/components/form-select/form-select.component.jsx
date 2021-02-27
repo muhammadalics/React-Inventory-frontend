@@ -3,8 +3,8 @@ import React from 'react';
 
 class FormSelect extends React.Component {
 
-    constructor({handleChange, label, options, ...otherProps}) {
-        super({handleChange, label, options, ...otherProps});
+    constructor({handleChange, label, name, options, ...otherProps}) {
+        super({handleChange, label, name, options, ...otherProps});
         console.log(options);
 
         //     const optionslist = [];
@@ -18,7 +18,9 @@ class FormSelect extends React.Component {
 
         this.state = {
             options: options,
-            label: label
+            label: label,
+            handleChange: handleChange,
+            name: name
         }
 
     }
@@ -42,8 +44,8 @@ class FormSelect extends React.Component {
 
             <div className="group">
                 <label>{this.state.label}</label>
-                <select className='forminput' onChange={this.handleChange} {...this.otherProps}>
-                    
+                <select className='forminput' name={this.state.name} onChange={this.state.handleChange} {...this.otherProps}>
+                    <option value=""></option>
                     {this.optionmaker()}
                     
                 </select>
