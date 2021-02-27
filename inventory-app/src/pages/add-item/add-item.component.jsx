@@ -21,7 +21,7 @@ class AddItem extends React.Component {
     }
 
 
-handleSubmit = event => {
+handleSubmit = async event => {
     event.preventDefault();
     // this.setState({ email: '', password: '' });
     console.log('The entered values are:')
@@ -31,6 +31,34 @@ handleSubmit = event => {
     console.log(this.state.corrosion);
     console.log(this.state.size);
     console.log(this.state.url);
+
+    let bodydata = {
+        name: this.state.name,
+        material: this.state.material,
+        weight: this.state.weight,
+        corrosionfree: 'true',
+        size: this.state.size,
+        department: this.state.url
+
+    }
+
+    console.log(JSON.stringify(bodydata))
+
+    const response = await fetch('http://localhost:5000/api/products', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        // body: JSON.stringify(bodydata)
+        body: JSON.stringify(bodydata)
+    
+    })
+
+    if (!response.ok){
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    console.log(response)
 
 };
 
