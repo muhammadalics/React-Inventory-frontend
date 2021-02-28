@@ -90,13 +90,13 @@ render(){
     }
     return (
         <div>
-        <h1>Add Items</h1>
+        <h2>Add Items</h2>
         <form onSubmit={this.handleSubmit}>
             <FormInput name='name' label='Product Name' handleChange={this.handleChange}/>
             <FormInput name='material' label='Material' handleChange={this.handleChange}/>
             <FormInput name='weight' label='Weight' handleChange={this.handleChange}/>
             <FormSelect value={this.state.corrosionfree} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
-            <FormSelect name='size' label='size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange}/>
+            <FormSelect name='size' label='Size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange}/>
             <FormInput name='url' label='Picture URL' handleChange={this.handleChange}/>
             <CustomButton type='submit'> Submit</CustomButton>
 

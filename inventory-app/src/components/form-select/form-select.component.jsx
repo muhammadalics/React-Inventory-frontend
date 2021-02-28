@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import './form-select.styles.css'
+
 class FormSelect extends React.Component {
 
     constructor({handleChange, label, name, options, value, ...otherProps}) {
@@ -44,11 +46,11 @@ class FormSelect extends React.Component {
         return (
 
             <div className="group">
-                <label>{this.state.label}</label>
-                <select value={this.state.value} className='forminput' name={this.state.name} onChange={this.state.handleChange} {...this.otherProps}>
+                {/* <div><label>{this.state.label}</label></div> */}
+                <div className="label">{this.state.label}</div>
+                <select value={this.state.value} className='formselect' name={this.state.name} onChange={this.state.handleChange} {...this.otherProps}>
                     {/* <option value=""></option> */}
-                    {this.optionmaker()}
-                    
+                    {this.optionmaker()}                   
                 </select>
 
             </div>
