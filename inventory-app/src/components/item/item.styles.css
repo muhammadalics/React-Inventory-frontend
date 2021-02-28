@@ -1,4 +1,25 @@
 .image {
+    
     height: 200px;
     width: 200px;
   }
+
+
+  
+.image:hover {
+  /* transform: scale(1.05); */
+
+}
+
+.img-div .span {
+  display:block;
+  width:10px;
+  height:20px;
+  position:absolute;
+  /* top:50px;
+  right:50px;  */
+  background:#c00;
+  /* overflow:hidden;  */
+  /* text-indent:-9999px; */
+  cursor: pointer;
+}
