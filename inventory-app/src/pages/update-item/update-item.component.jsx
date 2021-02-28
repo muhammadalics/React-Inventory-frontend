@@ -24,7 +24,7 @@ class UpdateItem extends React.Component {
 
 handleSubmit = async event => {
     event.preventDefault();
-    // this.setState({ email: '', password: '' });
+
     console.log('The entered values are:')
     console.log(this.state.name);
     console.log(this.state.material);
@@ -39,7 +39,8 @@ handleSubmit = async event => {
         weight: this.state.weight,
         corrosionfree: 'true',
         size: this.state.size,
-        department: this.state.url
+        department: this.state.url,
+        id: this.state.id
 
     }
 
@@ -50,13 +51,17 @@ handleSubmit = async event => {
         headers: {
             'Content-Type': 'application/json'
           },
-        // body: JSON.stringify(bodydata)
+        
         body: JSON.stringify(bodydata)
     
     })
 
     if (!response.ok){
         throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    else{
+        console.log('update successful.')
+        alert('Item has been updated!')
     }
 
     console.log(response)

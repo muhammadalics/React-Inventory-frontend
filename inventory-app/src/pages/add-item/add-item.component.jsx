@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from "react-router-dom";
 
 import FormInput from '../../components/form-input/form-input.component';
 import FormSelect from '../../components/form-select/form-select.component';
@@ -15,7 +16,8 @@ class AddItem extends React.Component {
             weight: '',
             corrosion: '',
             size: '',
-            url: ''
+            url: '',
+            redirect: false
         }
 
     }
@@ -58,6 +60,12 @@ handleSubmit = async event => {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
 
+    else{
+        alert('Item has been added!')
+        this.setState({redirect: true});
+    }
+
+
     console.log(response)
 
 };
@@ -76,6 +84,10 @@ handleChange = event => {
 };
 
 render(){
+    if (this.state.redirect) {
+        
+        return <Redirect to={{ pathname: "/" }} />
+    }
     return (
         <div>
         <h1>Add Items</h1>
@@ -83,7 +95,7 @@ render(){
             <FormInput name='name' label='Product Name' handleChange={this.handleChange}/>
             <FormInput name='material' label='Material' handleChange={this.handleChange}/>
             <FormInput name='weight' label='Weight' handleChange={this.handleChange}/>
-            <FormSelect value={this.state.corrosion} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
+            <FormSelect value={this.state.corrosionfree} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
             <FormSelect name='size' label='size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange}/>
             <FormInput name='url' label='Picture URL' handleChange={this.handleChange}/>
             <CustomButton type='submit'> Submit</CustomButton>
