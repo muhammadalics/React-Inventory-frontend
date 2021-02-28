@@ -15,10 +15,23 @@
   display:block;
   width:10px;
   height:20px;
-  position:absolute;
-  /* top:50px;
-  right:50px;  */
+  position:relative;
+  top:50px;
+  right:0px;  
   background:#c00;
+  /* overflow:hidden;  */
+  /* text-indent:-9999px; */
+  cursor: pointer;
+}
+
+.img-div .update {
+  display:block;
+  width:10px;
+  height:20px;
+  position:relative;
+  top:10px;
+  right:0px;  
+  background:rgb(121, 106, 250);
   /* overflow:hidden;  */
   /* text-indent:-9999px; */
   cursor: pointer;

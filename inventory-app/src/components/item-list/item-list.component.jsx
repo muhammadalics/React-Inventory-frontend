@@ -30,12 +30,6 @@ class ItemList extends React.Component {
 
     }
 
-    async handleDelete() {
-        alert('You are deleting this item!')
-        const response = await fetch('http://localhost:5000/api/products/', {
-            method: 'DELETE'
-        })
-    }
 
     render() {
 
@@ -50,7 +44,7 @@ class ItemList extends React.Component {
                             {
                                 this.state.items.map(({ department, name, size, corrosionfree, material, weight, _id}) => {
                                     return <div>
-                                        <Item department={department} name={name} size={size} corrosionfree={corrosionfree} material={material} weight={weight} id={_id} OnClickX={this.handleDelete} />
+                                        <Item department={department} name={name} size={size} corrosionfree={corrosionfree} material={material} weight={weight} id={_id}  />
                                     </div>
 
                                 })

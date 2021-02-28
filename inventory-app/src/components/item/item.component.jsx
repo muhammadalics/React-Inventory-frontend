@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Redirect } from "react-router-dom";
+
 import './item.styles.css'
 
 
@@ -37,7 +39,8 @@ class Item extends React.Component{
             corrosionfree:corrosionfree, 
             material:material, 
             weight:weight,
-            id:id
+            id:id,
+            redirect:null
         }
     }
 
@@ -58,7 +61,7 @@ class Item extends React.Component{
 
 
 
-a = async handleDelete => {
+deleteitem = async handleDelete => {
     // alert('You are deleting this item!')
     
     console.log(this.state.department)
@@ -68,12 +71,24 @@ a = async handleDelete => {
     })
 }
 
+// updateitem() {
+//     const history = useHistory();
+//     history.push("/updateitem")
+// }
+
+
 render(){
+    if(this.state.redirect){
+        // return <Redirect to="/updateitem" />
+        return <Redirect to={{pathname: "/updateitem", state:{detail: this.state}}} />
+    }
     return(
+        
         <div className="img-div">       
         
         {/* <div className="span" onClick={props.OnClickX}>X</div>  */}
-        <div className="span" onClick={this.a}>X</div> 
+        <div className="span" onClick={this.deleteitem}>X</div> 
+        <div className="update" onClick={()=> this.setState({redirect:true})}>U</div>
         {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
         <div className="span">X</div> */}
         <img className="image" src={this.state.department}/>
