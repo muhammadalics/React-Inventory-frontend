@@ -17,7 +17,15 @@ class AddItem extends React.Component {
             corrosion: '',
             size: '',
             url: '',
-            redirect: false
+            redirect: false,
+            errname: '',
+            errnamecolor: 'red',
+            errmaterial: '',
+            errmaterialcolor: 'red',
+            errweight: '',
+            errweightcolor: 'red',
+            disablebutton: false
+
         }
 
     }
@@ -75,7 +83,7 @@ handleChange = event => {
     
     console.log(name + " " + value);
     
-    this.setState({ [name]: value });
+    this.setState({ [name]: value },this.inputValidator);
     console.log('After state change:');
     console.log(this.state.corrosion);
     console.log(this.state.size);

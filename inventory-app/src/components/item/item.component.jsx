@@ -42,6 +42,7 @@ class Item extends React.Component {
             id: id,
             redirect: null,
             changeDetected: false
+            
         }
     }
 
@@ -82,6 +83,7 @@ class Item extends React.Component {
     // }
 
 
+
     render() {
         if (this.state.redirect) {
             // return <Redirect to="/updateitem" />
@@ -101,7 +103,8 @@ class Item extends React.Component {
                 <div className="update" onClick={() => this.setState({ redirect: true })}>U</div>
                 {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
         <div className="span">X</div> */}
-                <img className="image" src={this.state.department} />
+                
+                <img className="image" onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/200?text=Product+Image"}} src={this.state.department} />
 
                 <div>{this.state.name}</div>
                 <div>{this.state.size}</div>

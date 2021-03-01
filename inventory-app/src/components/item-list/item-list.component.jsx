@@ -2,6 +2,7 @@ import React from 'react';
 
 import  Item  from '../item/item.component';
 
+import {Link} from 'react-router-dom';
 
 import './item-list.styles.scss'
 
@@ -36,7 +37,9 @@ class ItemList extends React.Component {
         return (
 
             <div>
-                <h1>Inventory Management</h1>
+                <h1><center>CRUD App for Inventory</center></h1>
+                <center><Link to="/additem">Add Item</Link> <Link to="/about">About</Link></center>
+                
                 {this.state.loading || !this.state.items ? (
                     <div> loading...</div>
                 ) : (

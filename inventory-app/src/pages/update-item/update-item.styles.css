@@ -3,3 +3,7 @@
     margin-bottom: 1000px;   
     background-color: rgb(212, 212, 212);
 }
+
+.Name{
+    display:flex; flex-direction:row;
+}

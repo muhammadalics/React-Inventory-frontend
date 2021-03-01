@@ -16,3 +16,12 @@
     font-weight: 600;
     
 }
+
+.inputanderror{
+    display:flex; flex-direction:row;
+}
+
+.inputanderror .message{
+    font-size: 13px;
+    margin-left: 5px;
+}

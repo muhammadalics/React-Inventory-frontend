@@ -19,7 +19,15 @@ class UpdateItem extends React.Component {
             size: this.props.location.state.detail.size,
             url: this.props.location.state.detail.department,
             id: this.props.location.state.detail.id,
-            redirect: false
+            redirect: false,
+            errname: '',
+            errnamecolor: 'red',
+            errmaterial: '',
+            errmaterialcolor: 'red',
+            errweight: '',
+            errweightcolor: 'red',
+            disablebutton: false
+
         }
 
     }
@@ -43,7 +51,8 @@ class UpdateItem extends React.Component {
             corrosionfree: 'true',
             size: this.state.size,
             department: this.state.url,
-            id: this.state.id
+            id: this.state.id,
+
 
         }
 
@@ -77,22 +86,86 @@ class UpdateItem extends React.Component {
 
         console.log(name + " " + value);
 
-        this.setState({ [name]: value });
+        this.setState({ [name]: value }, this.inputValidator);
         console.log('After state change:');
         console.log(this.state.corrosion);
         console.log(this.state.size);
-
+        ;
 
     };
+
+    async inputValidator() {
+        if (this.state.name.length < 4 | this.state.name.length > 20) {
+            this.setState({ errname: 'Name should be between 4 and 20 characters long.' })
+            await this.setState({ errnamecolor: 'red' })
+            // this.setState({disablebutton: true})
+        }
+        else {
+            this.setState({ errname: 'OK' })
+            await this.setState({ errnamecolor: 'green' })
+            // this.setState({disablebutton: false})
+        }
+
+        if (this.state.material.length < 4 | this.state.material.length > 20) {
+            this.setState({ errmaterial: 'Material should be between 4 and 20 characters long.' })
+            await this.setState({ errmaterialcolor: 'red' })
+            // this.setState({disablebutton: true})
+        }
+        else {
+            this.setState({ errmaterial: 'OK' })
+            await this.setState({ errmaterialcolor: 'green' })
+            // this.setState({disablebutton: false})
+        }
+
+        let specialchar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,<>\/?]+/;
+        let alpha = /[a-zA-Z]/;
+
+        if (specialchar.test(this.state.weight) | alpha.test(this.state.weight)) {
+            this.setState({ errweight: 'Special characters and alphabets are not allowed.' })
+            await this.setState({ errweightcolor: 'red' })
+            // this.setState({disablebutton: true})          
+        }
+        else if (this.state.weight.length < 1 | this.state.weight.length > 10) {
+            this.setState({ errweight: 'Weight should not be empty or longer than 10 characters.' })
+            await this.setState({ errweightcolor: 'red' })
+            // this.setState({disablebutton: true})
+        }
+        else {
+            this.setState({ errweight: 'OK' })
+            await this.setState({ errweightcolor: 'green' })
+            // this.setState({disablebutton: false})
+        }
+
+        // if (this.state.errnamecolor === 'red' | this.state.errmaterialcolor === 'red' | this.state.errweightcolor === 'red') {
+        //     this.setState({ disablebutton: true });
+        // }
+        this.shouldDisableButton();
+    }
+
+    shouldDisableButton(){
+        console.log('Printing colors');
+        console.log(this.state.errnamecolor);
+        console.log(this.state.errmaterialcolor);
+        console.log(this.state.errweightcolor);
+        if (this.state.errnamecolor == 'red' || this.state.errmaterialcolor == 'red' || this.state.errweightcolor == 'red'){
+            console.log('firing color')
+            this.setState({disablebutton: true});
+        }
+        else{
+            this.setState({disablebutton: false});
+        }
+    }
+
 
     render() {
         console.log('rendering')
         console.log(this.props.location.state.detail)
         if (this.state.redirect) {
-
             return <Redirect to={{ pathname: "/" }} />
-
         }
+        console.log(this.state);
+        console.log(this.state.disablebutton);
+
         return (
             <div>
                 <h2>Update Items</h2>
@@ -102,13 +175,16 @@ class UpdateItem extends React.Component {
                     <p></p>
                     <br></br>
                     <br></br>
-                    <FormInput value={this.state.name} name='name' label='Product Name' handleChange={this.handleChange} />
-                    <FormInput value={this.state.material} name='material' label='Material' handleChange={this.handleChange} />
-                    <FormInput value={this.state.weight} name='weight' label='Weight' handleChange={this.handleChange} />
+                    {/* <div className="Name" > */}
+                    <FormInput value={this.state.name} name='name' label='Product Name' handleChange={this.handleChange} errmsg={this.state.errname} errcolor={this.state.errnamecolor} />
+                    {/* <div className="msg" style={{color: this.state.errnamecolor}}>{this.state.errname}</div> */}
+                    {/* </div> */}
+                    <FormInput value={this.state.material} name='material' label='Material' handleChange={this.handleChange} errmsg={this.state.errmaterial} errcolor={this.state.errmaterialcolor} />
+                    <FormInput value={this.state.weight} name='weight' label='Weight' handleChange={this.handleChange} errmsg={this.state.errweight} errcolor={this.state.errweightcolor} />
                     <FormSelect value={this.state.corrosion} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
                     <FormSelect value={this.state.size} name='size' label='Size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange} />
                     <FormInput value={this.state.url} name='url' label='Picture URL' handleChange={this.handleChange} />
-                    <CustomButton type='submit'>Push Update</CustomButton>
+                    <CustomButton status={this.state.disablebutton} type='submit'>Push Update</CustomButton>
 
                 </form>
 
