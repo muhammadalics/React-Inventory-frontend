@@ -46,7 +46,7 @@ class AddItem extends React.Component {
             name: this.state.name,
             material: this.state.material,
             weight: this.state.weight,
-            corrosionfree: 'true',
+            corrosionfree: (this.state.corrosion == 'true'),
             size: this.state.size,
             department: this.state.url
 
@@ -83,7 +83,18 @@ class AddItem extends React.Component {
 
         console.log(name + " " + value);
 
+        // if (name !== 'corrosion' && name !== 'size'){
+        //     console.log('name is not corrosion or size')
+        //     this.setState({ [name]: value }, this.inputValidator);
+        // }
+
+        // else{
+        //     this.setState({ [name]: value });
+        // }
         this.setState({ [name]: value }, this.inputValidator);
+        
+        
+        
         console.log('After state change:');
         console.log(this.state.corrosion);
         console.log(this.state.size);
@@ -166,7 +177,7 @@ class AddItem extends React.Component {
                     {/* <FormInput name='name' label='Product Name' handleChange={this.handleChange}/>
             <FormInput name='material' label='Material' handleChange={this.handleChange}/>
             <FormInput name='weight' label='Weight' handleChange={this.handleChange}/>
-            <FormSelect value={this.state.corrosionfree} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
+            <FormSelect name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
             <FormSelect name='size' label='Size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange}/>
             <FormInput name='url' label='Picture URL' handleChange={this.handleChange}/>
             <CustomButton type='submit'> Submit</CustomButton> */}
@@ -174,10 +185,10 @@ class AddItem extends React.Component {
                     <FormInput value={this.state.name} name='name' label='Product Name' handleChange={this.handleChange} errmsg={this.state.errname} errcolor={this.state.errnamecolor} />
                     <FormInput value={this.state.material} name='material' label='Material' handleChange={this.handleChange} errmsg={this.state.errmaterial} errcolor={this.state.errmaterialcolor} />
                     <FormInput value={this.state.weight} name='weight' label='Weight' handleChange={this.handleChange} errmsg={this.state.errweight} errcolor={this.state.errweightcolor} />
-                    <FormSelect value={this.state.corrosion} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
-                    <FormSelect value={this.state.size} name='size' label='Size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange} />
+                    <FormSelect name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
+                    <FormSelect name='size' label='Size' options={{ 'Small': 'Small', 'Medium': 'Medium', 'Large': 'Large' }} handleChange={this.handleChange} />
                     <FormInput value={this.state.url} name='url' label='Picture URL' handleChange={this.handleChange} />
-                    <CustomButton status={this.state.disablebutton} type='submit'>Push Update</CustomButton>
+                    <CustomButton status={this.state.disablebutton} type='submit'>Submit</CustomButton>
 
 
 

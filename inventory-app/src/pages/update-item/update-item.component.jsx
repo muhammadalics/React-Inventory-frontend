@@ -15,7 +15,7 @@ class UpdateItem extends React.Component {
             name: this.props.location.state.detail.name,
             material: this.props.location.state.detail.material,
             weight: this.props.location.state.detail.weight,
-            corrosion: this.props.location.state.detail.corrosion,
+            corrosion: (this.props.location.state.detail.corrosionfree == true) ? 'True' : 'False' ,
             size: this.props.location.state.detail.size,
             url: this.props.location.state.detail.department,
             id: this.props.location.state.detail.id,
@@ -48,7 +48,7 @@ class UpdateItem extends React.Component {
             name: this.state.name,
             material: this.state.material,
             weight: this.state.weight,
-            corrosionfree: 'true',
+            corrosionfree: (this.state.corrosion == 'True'),
             size: this.state.size,
             department: this.state.url,
             id: this.state.id,
@@ -81,20 +81,31 @@ class UpdateItem extends React.Component {
 
     };
 
-    handleChange = event => {
+    handleChange = async event => {
+        console.log('Print event:');
+        console.log(event);
         const { value, name } = event.target;
 
         console.log(name + " " + value);
 
-        this.setState({ [name]: value }, this.inputValidator);
-        console.log('After state change:');
-        console.log(this.state.corrosion);
-        console.log(this.state.size);
-        ;
+        // if (name !== 'corrosion' && name !== 'size') {
+        //     console.log('name is not corrosion or size')
+        //     // await this.setState({ [name]: value }, this.inputValidator);
+        //     this.setState({ [name]: value });
+        // }
+        // else {
+        //     // await this.setState({ [name]: value });
+        //     this.setState({ [name]: value });
+        // }
+        // console.log('After state change:');
+        // console.log(this.state.corrosion);
+        // console.log(this.state.size);
+        await this.setState({ [name]: value }, this.inputValidator);
+        
 
     };
-
-    async inputValidator() {
+    // async inputValidator {
+    inputValidator = async () => {
         if (this.state.name.length < 4 | this.state.name.length > 20) {
             this.setState({ errname: 'Name should be between 4 and 20 characters long.' })
             await this.setState({ errnamecolor: 'red' })
@@ -141,30 +152,40 @@ class UpdateItem extends React.Component {
         // }
         this.shouldDisableButton();
     }
-
-    shouldDisableButton(){
+    // shouldDisableButton(){
+    shouldDisableButton = () => {
         console.log('Printing colors');
         console.log(this.state.errnamecolor);
         console.log(this.state.errmaterialcolor);
         console.log(this.state.errweightcolor);
-        if (this.state.errnamecolor == 'red' || this.state.errmaterialcolor == 'red' || this.state.errweightcolor == 'red'){
+        if (this.state.errnamecolor == 'red' || this.state.errmaterialcolor == 'red' || this.state.errweightcolor == 'red') {
             console.log('firing color')
-            this.setState({disablebutton: true});
+            this.setState({ disablebutton: true });
         }
-        else{
-            this.setState({disablebutton: false});
+        else {
+            this.setState({ disablebutton: false });
         }
     }
 
+    // componentDidMount(){
+    //     this.setState({corrosion: this.props.location.state.detail.corrosionfree});
+    //     this.setState({size: this.props.location.state.detail.size});
+    // }
+        
+
+    
 
     render() {
         console.log('rendering')
-        console.log(this.props.location.state.detail)
+        // console.log(this.props.location.state.detail)
         if (this.state.redirect) {
             return <Redirect to={{ pathname: "/" }} />
         }
-        console.log(this.state);
-        console.log(this.state.disablebutton);
+        // console.log(this.state);
+        // console.log(this.state.disablebutton);
+
+        console.log('The state of size inside render is:');
+        console.log(this.state.size);
 
         return (
             <div>
@@ -175,10 +196,8 @@ class UpdateItem extends React.Component {
                     <p></p>
                     <br></br>
                     <br></br>
-                    {/* <div className="Name" > */}
+
                     <FormInput value={this.state.name} name='name' label='Product Name' handleChange={this.handleChange} errmsg={this.state.errname} errcolor={this.state.errnamecolor} />
-                    {/* <div className="msg" style={{color: this.state.errnamecolor}}>{this.state.errname}</div> */}
-                    {/* </div> */}
                     <FormInput value={this.state.material} name='material' label='Material' handleChange={this.handleChange} errmsg={this.state.errmaterial} errcolor={this.state.errmaterialcolor} />
                     <FormInput value={this.state.weight} name='weight' label='Weight' handleChange={this.handleChange} errmsg={this.state.errweight} errcolor={this.state.errweightcolor} />
                     <FormSelect value={this.state.corrosion} name='corrosion' label='Corrosion Free' options={{ 'True': 'True', 'False': 'False' }} handleChange={this.handleChange} />
