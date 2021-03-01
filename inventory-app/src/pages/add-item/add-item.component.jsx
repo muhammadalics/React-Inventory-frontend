@@ -10,12 +10,14 @@ class AddItem extends React.Component {
     constructor() {
         super();
 
+
+
         this.state = {
             name: '',
             material: '',
             weight: '',
-            corrosion: '',
-            size: '',
+            corrosion: 'True', //Change this if you ever change options in FormSelect subcomponent.
+            size: 'Small', //Change this if you ever change options in FormSelect subcomponent.
             url: '',
             redirect: false,
             errname: '',
@@ -46,7 +48,7 @@ class AddItem extends React.Component {
             name: this.state.name,
             material: this.state.material,
             weight: this.state.weight,
-            corrosionfree: (this.state.corrosion == 'true'),
+            corrosionfree: (this.state.corrosion == 'True'),
             size: this.state.size,
             department: this.state.url
 
