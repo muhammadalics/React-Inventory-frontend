@@ -3,6 +3,10 @@ import React from 'react';
 import { Redirect } from "react-router-dom";
 
 import { RiEdit2Line, RiCloseCircleLine } from "react-icons/ri";
+import { AiOutlineColumnWidth } from "react-icons/ai";
+import { FaWeightHanging } from "react-icons/fa";
+import { FiBox } from "react-icons/fi";
+
 
 import './item.styles.css'
 
@@ -102,18 +106,20 @@ class Item extends React.Component {
 
                     {/* <div className="span" onClick={props.OnClickX}>X</div>  */}
                     <div className="container">
+                    <img className="image" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/200?text=Product+Image" }} src={this.state.department} />
                         <div className="span" onClick={this.deleteitem}><RiCloseCircleLine size={25} color={'black'} /></div>
-                        <div className="update" onClick={() => this.setState({ redirect: true })}><RiEdit2Line size={25} color={'black'}  /></div>
+                        <div className="update" onClick={() => this.setState({ redirect: true })}><RiEdit2Line size={25} color={'black'} /></div>
                         {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
         <div className="span">X</div> */}
-                        <img className="image" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/200?text=Product+Image" }} src={this.state.department} />
-
+                        
+                            
+                        
                     </div>
-                    <div>{this.state.name}</div>
-                    <div>{this.state.size}</div>
+                    <div className="productname"><div className="span1">{this.state.name}</div></div>
+                    <div><AiOutlineColumnWidth />  {this.state.size}</div>
                     <div>{this.state.corrosionfree}</div>
-                    <div>{this.state.material}</div>
-                    <div>{this.state.weight}</div>
+                    <div><FiBox />  {this.state.material}</div>
+                    <div><FaWeightHanging />  {this.state.weight} kg</div>
                 </div>
 
 

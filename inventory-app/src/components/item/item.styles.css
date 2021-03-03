@@ -2,6 +2,7 @@
     
     height: 200px;
     width: 200px;
+    
     /* -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
@@ -11,9 +12,10 @@
   
 .image:hover {
   /* transform: scale(1.05); */
-  /* -webkit-transform: scale(1.05);
-	transform: scale(1.05); */
-
+  /* -webkit-transform: scale(1.05); */
+	transform: scale(1.05);
+  transition: .3s ease-in-out; 
+  
 }
 
 .container{
@@ -41,10 +43,10 @@
 
 .img-div .span {
   display:block;
-  width: 10px;
-  height:10px;
+  width: 0px;
+  height:0px;
   position:relative;
-  top:20px;
+  top:-205px;
   /* right:0px; */
   left: 173px;
   opacity: 0;
@@ -57,14 +59,16 @@
 .img-div .span:hover {
   opacity: 1;
   /* background-color:rgba(255, 255, 255, 0.5) */
+  
 }
 
 .img-div .update {
   display:block; 
-  width:10px;
-  height:10px;
+  width:0px;
+  height:0px;
   position:relative;
-  top:10px;
+  /* bottom: 0 px; */
+  top:-206px;
   left:143px;  
   /* background:rgb(121, 106, 250); */
   /* overflow:hidden;  */
@@ -75,4 +79,19 @@
 
 .img-div .update:hover {
   opacity: 1
+}
+
+
+
+/* .productname {
+  background-color: rgb(255,255,0, 0.4);
+  font-weight: 500;
+  width: 200 px;
+} */
+
+.span1 {
+  display:inline;
+  background-color: rgb(255,255,0, 0.4);
+  font-weight: 700;
+
 }
