@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Redirect } from "react-router-dom";
 
+import { RiEdit2Line, RiCloseCircleLine } from "react-icons/ri";
+
 import './item.styles.css'
 
 
@@ -99,8 +101,9 @@ class Item extends React.Component {
             <div className="img-div">
 
                 {/* <div className="span" onClick={props.OnClickX}>X</div>  */}
-                <div className="span" onClick={this.deleteitem}>X</div>
-                <div className="update" onClick={() => this.setState({ redirect: true })}>U</div>
+                
+                <div className="span" onClick={this.deleteitem}><RiCloseCircleLine size={30} color={'red'}/></div>
+                <div className="update" onClick={() => this.setState({ redirect: true })}><RiEdit2Line size={30} color={'blue'}/></div>
                 {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
         <div className="span">X</div> */}
                 
