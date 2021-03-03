@@ -44,7 +44,7 @@ class Item extends React.Component {
             id: id,
             redirect: null,
             changeDetected: false
-            
+
         }
     }
 
@@ -92,36 +92,36 @@ class Item extends React.Component {
             return <Redirect to={{ pathname: "/updateitem", state: { detail: this.state } }} />
         }
 
-        if (!this.state.changeDetected){
+        if (!this.state.changeDetected) {
 
-        
 
-        return (
-                
-            <div className="img-div">
 
-                {/* <div className="span" onClick={props.OnClickX}>X</div>  */}
-                
-                <div className="span" onClick={this.deleteitem}><RiCloseCircleLine size={30} color={'red'}/></div>
-                <div className="update" onClick={() => this.setState({ redirect: true })}><RiEdit2Line size={30} color={'blue'}/></div>
-                {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
+            return (
+
+                <div className="img-div">
+
+                    {/* <div className="span" onClick={props.OnClickX}>X</div>  */}
+                    <div className="container">
+                        <div className="span" onClick={this.deleteitem}><RiCloseCircleLine size={25} color={'black'} /></div>
+                        <div className="update" onClick={() => this.setState({ redirect: true })}><RiEdit2Line size={25} color={'black'}  /></div>
+                        {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
         <div className="span">X</div> */}
-                
-                <img className="image" onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/200?text=Product+Image"}} src={this.state.department} />
+                        <img className="image" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/200?text=Product+Image" }} src={this.state.department} />
 
-                <div>{this.state.name}</div>
-                <div>{this.state.size}</div>
-                <div>{this.state.corrosionfree}</div>
-                <div>{this.state.material}</div>
-                <div>{this.state.weight}</div>
-            </div>
+                    </div>
+                    <div>{this.state.name}</div>
+                    <div>{this.state.size}</div>
+                    <div>{this.state.corrosionfree}</div>
+                    <div>{this.state.material}</div>
+                    <div>{this.state.weight}</div>
+                </div>
 
-        
+
             )
         }
-        else{
-            return(<div></div>)
-            
+        else {
+            return (<div></div>)
+
         }
 
     }

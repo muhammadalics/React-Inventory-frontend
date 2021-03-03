@@ -8,7 +8,6 @@
     transition: .3s ease-in-out; */ 
   }
 
-
   
 .image:hover {
   /* transform: scale(1.05); */
@@ -17,28 +16,63 @@
 
 }
 
+.container{
+  position: relative;
+  width: 5%;
+}
+
+.container:hover .span{
+  /* transform: scale(1.05); */
+  /* -webkit-transform: scale(1.05);
+	transform: scale(1.05); */
+  opacity:0.5;
+  transition: .2s ease;
+}
+
+.container:hover .update{
+  /* transform: scale(1.05); */
+  /* -webkit-transform: scale(1.05);
+	transform: scale(1.05); */
+  opacity:0.5;
+  /* transition: .4s ease; */
+}
+
+
+
 .img-div .span {
   display:block;
-  width:10px;
+  width: 10px;
   height:10px;
   position:relative;
-  top:50px;
-  right:0px;  
+  top:20px;
+  /* right:0px; */
+  left: 173px;
+  opacity: 0;
   /* background:#c00; */
   /* overflow:hidden;  */
   /* text-indent:-9999px; */
   cursor: pointer;
 }
 
+.img-div .span:hover {
+  opacity: 1;
+  /* background-color:rgba(255, 255, 255, 0.5) */
+}
+
 .img-div .update {
-  display:block;
-  /* width:10px;
-  height:20px; */
+  display:block; 
+  width:10px;
+  height:10px;
   position:relative;
   top:10px;
-  right:0px;  
+  left:143px;  
   /* background:rgb(121, 106, 250); */
   /* overflow:hidden;  */
   /* text-indent:-9999px; */
   cursor: pointer;
+  opacity: 0;
+}
+
+.img-div .update:hover {
+  opacity: 1
 }
