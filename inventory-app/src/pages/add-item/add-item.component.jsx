@@ -56,7 +56,8 @@ class AddItem extends React.Component {
 
         console.log(JSON.stringify(bodydata))
 
-        const response = await fetch('http://localhost:5000/api/products', {
+        // const response = await fetch('http://localhost:5000/api/products', {
+        const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -94,9 +95,9 @@ class AddItem extends React.Component {
         //     this.setState({ [name]: value });
         // }
         this.setState({ [name]: value }, this.inputValidator);
-        
-        
-        
+
+
+
         console.log('After state change:');
         console.log(this.state.corrosion);
         console.log(this.state.size);

@@ -74,7 +74,9 @@ class Item extends React.Component {
 
         console.log(this.state.department)
 
-        const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
+        // https://desolate-fjord-62722.herokuapp.com
+        // const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
+        const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products/' + this.state.id, {
             method: 'DELETE'
         })
         this.setState({ changeDetected: true });
@@ -106,14 +108,14 @@ class Item extends React.Component {
 
                     {/* <div className="span" onClick={props.OnClickX}>X</div>  */}
                     <div className="container">
-                    <img className="image" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/200?text=Product+Image" }} src={this.state.department} />
+                        <img className="image" onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/200?text=Product+Image" }} src={this.state.department} />
                         <div className="span" onClick={this.deleteitem}><RiCloseCircleLine size={25} color={'black'} /></div>
                         <div className="update" onClick={() => this.setState({ redirect: true })}><RiEdit2Line size={25} color={'black'} /></div>
                         {/* {<div className="span" onClick={handleDelete(props.id)}>X</div>  }
         <div className="span">X</div> */}
-                        
-                            
-                        
+
+
+
                     </div>
                     <div className="productname"><div className="span1">{this.state.name}</div></div>
                     <div><AiOutlineColumnWidth />  {this.state.size}</div>

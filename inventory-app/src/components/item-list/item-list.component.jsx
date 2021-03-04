@@ -19,8 +19,9 @@ class ItemList extends React.Component {
 
 
     async componentDidMount() {
-
-        const url = "http://localhost:5000/api/products";
+        
+        // const url = "http://localhost:5000/api/products";
+        const url = "https://desolate-fjord-62722.herokuapp.com/api/products";
         const resp = await fetch(url);
         const data = await resp.json();
         console.log(data);

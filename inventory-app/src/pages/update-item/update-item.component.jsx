@@ -15,7 +15,7 @@ class UpdateItem extends React.Component {
             name: this.props.location.state.detail.name,
             material: this.props.location.state.detail.material,
             weight: this.props.location.state.detail.weight,
-            corrosion: (this.props.location.state.detail.corrosionfree == true) ? 'True' : 'False' ,
+            corrosion: (this.props.location.state.detail.corrosionfree == true) ? 'True' : 'False',
             size: this.props.location.state.detail.size,
             url: this.props.location.state.detail.department,
             id: this.props.location.state.detail.id,
@@ -58,7 +58,8 @@ class UpdateItem extends React.Component {
 
         console.log(JSON.stringify(bodydata))
 
-        const response = await fetch('http://localhost:5000/api/products', {
+        // const response = await fetch('http://localhost:5000/api/products', {
+        const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,7 +102,7 @@ class UpdateItem extends React.Component {
         // console.log(this.state.corrosion);
         // console.log(this.state.size);
         await this.setState({ [name]: value }, this.inputValidator);
-        
+
 
     };
     // async inputValidator {
@@ -171,9 +172,9 @@ class UpdateItem extends React.Component {
     //     this.setState({corrosion: this.props.location.state.detail.corrosionfree});
     //     this.setState({size: this.props.location.state.detail.size});
     // }
-        
 
-    
+
+
 
     render() {
         console.log('rendering')
