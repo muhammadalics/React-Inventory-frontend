@@ -40,10 +40,16 @@
 .App
 {
   /* background-image: linear-gradient(to right, #bdc3c7 , #2c3e50); */
+  background: #121212;  /* fallback for old browsers */
+  font-family: monospace;
+  
+  
 }
 
 h1 {
-  font-family: 'Open Sans';
+  /* font-family: 'Open Sans';  */
+  font-family: monospace;
   font-size: 64px;
+  color:white;
 
 }

@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom';
 
 import './item-list.styles.scss'
 
+import CustomButton from '../custom-button/custom-button.component';
+
 class ItemList extends React.Component {
     constructor() {
         super();
@@ -20,8 +22,8 @@ class ItemList extends React.Component {
 
     async componentDidMount() {
         
-        // const url = "http://localhost:5000/api/products";
-        const url = "https://desolate-fjord-62722.herokuapp.com/api/products";
+        const url = "http://localhost:5000/api/products";
+        // const url = "https://desolate-fjord-62722.herokuapp.com/api/products";
         const resp = await fetch(url);
         const data = await resp.json();
         console.log(data);
@@ -39,7 +41,12 @@ class ItemList extends React.Component {
 
             <div>
                 <h1><center>CRUD App for Inventory</center></h1>
-                <center><Link to="/additem">Add Item</Link> <Link to="/about">About</Link></center>
+                <div className="links"><center><Link to="/additem">Add Item</Link> <Link to="/about">About</Link></center></div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
                 
                 {this.state.loading || !this.state.items ? (
                     <div> loading...</div>

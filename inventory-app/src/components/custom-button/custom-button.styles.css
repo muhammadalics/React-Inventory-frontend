@@ -1,23 +1,23 @@
 .custom-button1{
     display:inline-block;
     padding:0.35em 1.2em;
-    border:0.2em solid #000000;
+    border:0.2em solid white;
     margin:0 0.3em 0.3em 0;
     border-radius:0.12em;
     box-sizing: border-box;
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:600;
-    color:#000000;
+    color:white;
     text-align:center;
     transition: all 0.2s;
     margin-left: 60px;
-    background-color:#FFFFFF;
+    background-color: black;
 }
 
 .custom-button1:hover{
-    color:#FFFFFF;
-    background-color:#000000;
+    color:black;
+    background-color:white;
 }
 
 @media all and (max-width:30em){

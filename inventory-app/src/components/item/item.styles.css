@@ -91,7 +91,10 @@
 
 .span1 {
   display:inline;
-  background-color: rgb(255,255,0, 0.4);
+  /* background-color: rgb(255,255,255, 0.4); */
   font-weight: 700;
+  font-family:monospace;
+  font-size: 20px;
+  color: white;
 
 }

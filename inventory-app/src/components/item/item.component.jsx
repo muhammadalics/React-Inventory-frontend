@@ -75,8 +75,8 @@ class Item extends React.Component {
         console.log(this.state.department)
 
         // https://desolate-fjord-62722.herokuapp.com
-        // const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
-        const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products/' + this.state.id, {
+        const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
+        // const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products/' + this.state.id, {
             method: 'DELETE'
         })
         this.setState({ changeDetected: true });
