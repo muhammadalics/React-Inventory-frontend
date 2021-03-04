@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/inventory-app/static/css/main.492376e4.chunk.css",
-    "main.js": "/inventory-app/static/js/main.b17b4143.chunk.js",
-    "main.js.map": "/inventory-app/static/js/main.b17b4143.chunk.js.map",
-    "runtime-main.js": "/inventory-app/static/js/runtime-main.cbcd7d11.js",
-    "runtime-main.js.map": "/inventory-app/static/js/runtime-main.cbcd7d11.js.map",
-    "static/js/2.66399c97.chunk.js": "/inventory-app/static/js/2.66399c97.chunk.js",
-    "static/js/2.66399c97.chunk.js.map": "/inventory-app/static/js/2.66399c97.chunk.js.map",
-    "static/js/3.0dd5587f.chunk.js": "/inventory-app/static/js/3.0dd5587f.chunk.js",
-    "static/js/3.0dd5587f.chunk.js.map": "/inventory-app/static/js/3.0dd5587f.chunk.js.map",
-    "index.html": "/inventory-app/index.html",
-    "static/css/main.492376e4.chunk.css.map": "/inventory-app/static/css/main.492376e4.chunk.css.map",
-    "static/js/2.66399c97.chunk.js.LICENSE.txt": "/inventory-app/static/js/2.66399c97.chunk.js.LICENSE.txt"
+    "main.css": "/React-Inventory-frontend/static/css/main.492376e4.chunk.css",
+    "main.js": "/React-Inventory-frontend/static/js/main.b17b4143.chunk.js",
+    "main.js.map": "/React-Inventory-frontend/static/js/main.b17b4143.chunk.js.map",
+    "runtime-main.js": "/React-Inventory-frontend/static/js/runtime-main.3da6722c.js",
+    "runtime-main.js.map": "/React-Inventory-frontend/static/js/runtime-main.3da6722c.js.map",
+    "static/js/2.66399c97.chunk.js": "/React-Inventory-frontend/static/js/2.66399c97.chunk.js",
+    "static/js/2.66399c97.chunk.js.map": "/React-Inventory-frontend/static/js/2.66399c97.chunk.js.map",
+    "static/js/3.0dd5587f.chunk.js": "/React-Inventory-frontend/static/js/3.0dd5587f.chunk.js",
+    "static/js/3.0dd5587f.chunk.js.map": "/React-Inventory-frontend/static/js/3.0dd5587f.chunk.js.map",
+    "index.html": "/React-Inventory-frontend/index.html",
+    "static/css/main.492376e4.chunk.css.map": "/React-Inventory-frontend/static/css/main.492376e4.chunk.css.map",
+    "static/js/2.66399c97.chunk.js.LICENSE.txt": "/React-Inventory-frontend/static/js/2.66399c97.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.cbcd7d11.js",
+    "static/js/runtime-main.3da6722c.js",
     "static/js/2.66399c97.chunk.js",
     "static/css/main.492376e4.chunk.css",
     "static/js/main.b17b4143.chunk.js"
