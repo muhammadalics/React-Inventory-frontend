@@ -76,7 +76,7 @@ class Item extends React.Component {
 
         // https://desolate-fjord-62722.herokuapp.com
         const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
-        // const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products/' + this.state.id, {
+            // const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products/' + this.state.id, {
             method: 'DELETE'
         })
         this.setState({ changeDetected: true });
@@ -95,7 +95,7 @@ class Item extends React.Component {
     render() {
         if (this.state.redirect) {
             // return <Redirect to="/updateitem" />
-            return <Redirect to={{ pathname: "/updateitem", state: { detail: this.state } }} />
+            return <Redirect to={{ pathname: "/updateitem", state: { detail: this.state } }} push />
         }
 
         if (!this.state.changeDetected) {
@@ -118,10 +118,14 @@ class Item extends React.Component {
 
                     </div>
                     <div className="productname"><div className="span1">{this.state.name}</div></div>
-                    <div><AiOutlineColumnWidth />  {this.state.size}</div>
-                    <div>{this.state.corrosionfree}</div>
-                    <div><FiBox />  {this.state.material}</div>
-                    <div><FaWeightHanging />  {this.state.weight} kg</div>
+                    <div className="otherinfo">
+                        <div><AiOutlineColumnWidth />  {this.state.size}</div>
+                        <div>{this.state.corrosionfree}</div>
+                        <div><FiBox />  {this.state.material}</div>
+                        <div><FaWeightHanging />  {this.state.weight} kg</div>
+                        <br></br>
+                        <br></br>
+                    </div>
                 </div>
 
 
