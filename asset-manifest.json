@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-Inventory-frontend/static/css/main.e538fcd8.chunk.css",
-    "main.js": "/React-Inventory-frontend/static/js/main.d75a95a8.chunk.js",
-    "main.js.map": "/React-Inventory-frontend/static/js/main.d75a95a8.chunk.js.map",
+    "main.js": "/React-Inventory-frontend/static/js/main.f75c7de5.chunk.js",
+    "main.js.map": "/React-Inventory-frontend/static/js/main.f75c7de5.chunk.js.map",
     "runtime-main.js": "/React-Inventory-frontend/static/js/runtime-main.ab3ef221.js",
     "runtime-main.js.map": "/React-Inventory-frontend/static/js/runtime-main.ab3ef221.js.map",
     "static/js/2.466a100d.chunk.js": "/React-Inventory-frontend/static/js/2.466a100d.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ab3ef221.js",
     "static/js/2.466a100d.chunk.js",
     "static/css/main.e538fcd8.chunk.css",
-    "static/js/main.d75a95a8.chunk.js"
+    "static/js/main.f75c7de5.chunk.js"
   ]
 }
