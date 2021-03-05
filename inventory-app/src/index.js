@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter basename ="/React-Inventory-frontend">
+  <BrowserRouter basename ="/crud-app">
   {/* <BrowserRouter> */}
   <React.StrictMode>
     <App />
