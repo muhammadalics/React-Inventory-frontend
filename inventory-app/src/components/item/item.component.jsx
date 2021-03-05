@@ -72,16 +72,21 @@ class Item extends React.Component {
     deleteitem = async handleDelete => {
         // alert('You are deleting this item!')
 
-        console.log(this.state.department)
+        if (window.confirm('The item is being deleted.')) {
 
-        // https://desolate-fjord-62722.herokuapp.com
-        const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
+
+
+            console.log(this.state.department)
+
+            // https://desolate-fjord-62722.herokuapp.com
+            const response = await fetch('http://localhost:5000/api/products/' + this.state.id, {
             // const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products/' + this.state.id, {
-            method: 'DELETE'
-        })
-        this.setState({ changeDetected: true });
-        console.log(this.state.changeDetected);
-        this.setState({ state: this.state });
+                method: 'DELETE'
+            })
+            this.setState({ changeDetected: true });
+            console.log(this.state.changeDetected);
+            this.setState({ state: this.state });
+        }
 
     }
 

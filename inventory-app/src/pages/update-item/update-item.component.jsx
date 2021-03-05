@@ -58,8 +58,8 @@ class UpdateItem extends React.Component {
 
         console.log(JSON.stringify(bodydata))
 
-        const response = await fetch('http://localhost:5000/api/products', {
-        // const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products', {
+        // const response = await fetch('http://localhost:5000/api/products', {
+        const response = await fetch('https://desolate-fjord-62722.herokuapp.com/api/products', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

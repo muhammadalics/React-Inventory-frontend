@@ -1,5 +1,18 @@
 .para{
     color:white;
-    font-size: 50 px;
+    font-size:18px;
+    padding-left: 20px;
 }
 
+.crud{
+    font-size: 22px;
+}
+
+.bodypara{
+    padding-left: 50px;
+    padding-bottom: 20px;;
+}
+
+.points{
+    display:inline-flex;
+}
