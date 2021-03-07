@@ -86,21 +86,8 @@ class UpdateItem extends React.Component {
         console.log('Print event:');
         console.log(event);
         const { value, name } = event.target;
-
         console.log(name + " " + value);
 
-        // if (name !== 'corrosion' && name !== 'size') {
-        //     console.log('name is not corrosion or size')
-        //     // await this.setState({ [name]: value }, this.inputValidator);
-        //     this.setState({ [name]: value });
-        // }
-        // else {
-        //     // await this.setState({ [name]: value });
-        //     this.setState({ [name]: value });
-        // }
-        // console.log('After state change:');
-        // console.log(this.state.corrosion);
-        // console.log(this.state.size);
         await this.setState({ [name]: value }, this.inputValidator);
 
 
