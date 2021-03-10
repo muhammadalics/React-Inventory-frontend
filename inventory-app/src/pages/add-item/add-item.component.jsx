@@ -86,14 +86,7 @@ class AddItem extends React.Component {
 
         console.log(name + " " + value);
 
-        // if (name !== 'corrosion' && name !== 'size'){
-        //     console.log('name is not corrosion or size')
-        //     this.setState({ [name]: value }, this.inputValidator);
-        // }
 
-        // else{
-        //     this.setState({ [name]: value });
-        // }
         this.setState({ [name]: value }, this.inputValidator);
 
 
