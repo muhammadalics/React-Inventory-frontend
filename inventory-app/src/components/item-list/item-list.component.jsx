@@ -49,7 +49,7 @@ class ItemList extends React.Component {
                 {this.state.loading || !this.state.items ? (
                     <div>
                     <div className="loadmsg"> Waking up Heroku dyno...</div>
-                    <div className="belowloadmsg"> It may take a few seconds</div>
+                    <div className="belowloadmsg"> It may take about 8 to 10 seconds</div>
                     </div>
                     
                 ) : (
